@@ -1,4 +1,4 @@
-.menu{
+.menu {
     display: flex;
     width: 80%;
     margin-left: auto;
@@ -6,7 +6,62 @@
     border: 1px solid black;
 }
 
-.menu__item{
+.menu__item {
     border: 1px solid black;
     padding: 20px;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    margin-top: 30px;
+}
+
+.post {
+    border: 1px solid black;
+    padding: 30px;
+
+}
+
+.post:hover{
+    cursor: pointer;
+    background-color: gray;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 30px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.author_data {
+    display: flex;
+    flex-direction: row;
+}
+
+.author_name {
+    color: #3b5da5;
+    font-weight: bolder;
+    font-size: 17px;
+}
+
+.author_position {
+    color: #606778;
+    font-weight: bolder;
+}
+
+.created {
+    font-size: 14px;
+    color: darkgray;
+}
+
+.content {
+    padding: 10px;
 }
