@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import {v4 as uuidv4} from 'uuid';
+import Cancel from "../buttons/Cancel";
+import Ok from "../buttons/Ok";
 
 export default function CreatePage(props) {
     const [txt, setTxt] = useState("");
@@ -19,8 +21,6 @@ export default function CreatePage(props) {
             body: JSON.stringify(data)
         });
         let result = await response.json();
-        window.location.assign('/');
-        console.log(result)
     }
 
     return (
@@ -30,8 +30,8 @@ export default function CreatePage(props) {
                 () => setTxt(document.querySelector('.create > textarea').value)
             }/>
             <div className='create_controls'>
-                <button className='cancel' onClick={()=> window.location.assign('/')}>Cancel</button>
-                <button className='ok' onClick={send}>OK</button>
+                <Cancel/>
+                <Ok func={send}/>
             </div>
         </div>
     );

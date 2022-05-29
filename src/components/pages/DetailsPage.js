@@ -1,5 +1,8 @@
 import React, {Component} from "react";
 import {useParams} from "react-router-dom";
+import Cancel from "../buttons/Cancel";
+import Ok from "../buttons/Ok";
+import Delete from "../buttons/Delete";
 
 function withParams(Component) {
     return props => <Component {...props} params={useParams()}/>;
@@ -56,7 +59,7 @@ class DetailsPage extends Component {
             body: JSON.stringify(data)
         });
         let result = await response.json();
-        window.location.assign('/');
+        return result;
     }
 
     async delete(){
@@ -68,13 +71,11 @@ class DetailsPage extends Component {
             }
         });
         let result = await response.json();
-        window.location.assign('/');
-        console.log(result)
+        return result;
     }
 
     async setTxt() {
         let newTxt = document.querySelector('.edit > textarea').value;
-        console.log(newTxt)
         this.setState({
             txt: newTxt
         })
@@ -93,9 +94,9 @@ class DetailsPage extends Component {
                     defaultValue={data}
                     onChange={this.setTxt}/>
                 <div className='edit_controls'>
-                    <button className='delete' onClick={this.delete}>Delete</button>
-                    <button className='cancel' onClick={() => window.location.assign('/')}>Cancel</button>
-                    <button className='ok' onClick={this.send}>OK</button>
+                    <Delete func={this.delete}/>
+                    <Cancel/>
+                    <Ok func={this.send}/>
                 </div>
             </div>
         );
