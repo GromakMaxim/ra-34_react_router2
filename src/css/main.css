@@ -80,7 +80,6 @@
 }
 
 .create > textarea, .edit > textarea {
-    width: 100%;
     height: 90px;
     resize: none;
     padding: 10px;
@@ -93,7 +92,7 @@
     margin-top: 20px;
 }
 
-.cancel {
+.delete, .cancel, .ok{
     margin-right: 10px;
 }
 

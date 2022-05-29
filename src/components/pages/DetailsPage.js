@@ -16,6 +16,7 @@ class DetailsPage extends Component {
         }
         this.loadNotesFromAPI = this.loadNotesFromAPI.bind(this);
         this.send = this.send.bind(this);
+        this.delete = this.delete.bind(this);
         this.setTxt = this.setTxt.bind(this);
     }
 
@@ -55,7 +56,19 @@ class DetailsPage extends Component {
             body: JSON.stringify(data)
         });
         let result = await response.json();
-        //window.location.assign('/');
+        window.location.assign('/');
+    }
+
+    async delete(){
+        console.log('https://hooks2-api.herokuapp.com/posts/'+this.state.id)
+        let response = await fetch('https://hooks2-api.herokuapp.com/posts/'+this.state.id, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            }
+        });
+        let result = await response.json();
+        window.location.assign('/');
         console.log(result)
     }
 
@@ -80,6 +93,7 @@ class DetailsPage extends Component {
                     defaultValue={data}
                     onChange={this.setTxt}/>
                 <div className='edit_controls'>
+                    <button className='delete' onClick={this.delete}>Delete</button>
                     <button className='cancel' onClick={() => window.location.assign('/')}>Cancel</button>
                     <button className='ok' onClick={this.send}>OK</button>
                 </div>
