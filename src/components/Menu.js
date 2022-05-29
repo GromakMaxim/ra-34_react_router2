@@ -2,8 +2,9 @@ import React from "react";
 import {Link, Route, Routes} from "react-router-dom";
 import PostsPage from "./pages/PostsPage";
 import CreatePage from "./pages/CreatePage";
+import DetailsPage from "./pages/DetailsPage";
 
-export default function Menu(props){
+export default function Menu(props) {
 
     return (
         <>
@@ -15,6 +16,7 @@ export default function Menu(props){
             <Routes>
                 <Route exact path='/' element={<PostsPage/>}/>
                 <Route exact path='/posts/new' element={<CreatePage/>}/>
+                <Route path='/posts/:id' element={<DetailsPage/>}/>
             </Routes>
         </>
     );
