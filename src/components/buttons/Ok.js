@@ -1,7 +1,7 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
-export default function Ok(props){
+export default function Ok(props) {
     const navigate = useNavigate();
 
     async function doAction() {
@@ -10,7 +10,7 @@ export default function Ok(props){
 
     }
 
-    return(
+    return (
         <button className='ok' onClick={doAction}>
             Ok
         </button>

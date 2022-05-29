@@ -62,9 +62,9 @@ class DetailsPage extends Component {
         return result;
     }
 
-    async delete(){
-        console.log('https://hooks2-api.herokuapp.com/posts/'+this.state.id)
-        let response = await fetch('https://hooks2-api.herokuapp.com/posts/'+this.state.id, {
+    async delete() {
+        console.log('https://hooks2-api.herokuapp.com/posts/' + this.state.id)
+        let response = await fetch('https://hooks2-api.herokuapp.com/posts/' + this.state.id, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
